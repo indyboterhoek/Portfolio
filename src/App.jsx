@@ -51,6 +51,33 @@ let projects = [
 	},
 ]
 
+let contactDetails = [
+	{
+		"name": "Email",
+		"command": "email",
+		"detail": "indy@indyboterhoek.com",
+		"url": "mailto:indy@indyboterhoek.com",
+	},
+	{
+		"name": "LinkedIn",
+		"command": "linkedin",
+		"detail": "IndyBoterhoek",
+		"url": "https://linkedin.indyboterhoek.com",
+	},
+	{
+		"name": "GitHub",
+		"command": "github",
+		"detail": "IndyBoterhoek",
+		"url": "https://github.indyboterhoek.com",
+	},
+	{
+		"name": "Leet Code",
+		"command": "leetcode",
+		"detail": "IndyBoterhoek",
+		"url": "https://leet.indyboterhoek.com",
+	}
+]
+
 function App() {
 	const [input, setInput] = useState("");
 	const [spin, setSpin] = useState(false);
@@ -120,8 +147,33 @@ function App() {
 				}
 				return newOutputs
 			}
+		},
+		{
+			"name": "contact",
+			"description": "lists all the ways to contact me",
+			"func": function () {
+				let newOutputs = []
+				newOutputs.push("Contact Info:");
+				for (let i = 0; i < contactDetails.length; i++) {
+					newOutputs.push(`	- ${contactDetails[i]["name"]}: ${contactDetails[i]["detail"]}`);
+				}
+				return newOutputs
+			}
 		}
 	]
+
+	for (let i = 0; i < contactDetails.length; i++) {
+		commands.push({
+			"name": contactDetails[i]["command"],
+			"description": "open the contact for " + contactDetails[i]["name"],
+			"func": function () {
+				let newOutputs = []
+				newOutputs.push("opening contact: " + contactDetails[i]["name"]);
+				window.open(contactDetails[i]["url"], "_blank");
+				return newOutputs
+			}
+		});
+	}
 
 	function handleSubmit(e) {
 		console.log(input, e)
