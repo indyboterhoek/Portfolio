@@ -1,7 +1,7 @@
 .App {
   background-color: black;
   color: white;
-  height: 100vh;
+  height: auto;
   padding: 5rem;
   box-sizing: border-box;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
