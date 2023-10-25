@@ -49,6 +49,17 @@ let projects = [
 			"		Then you can just use the command 'project {projectCommand}' to open the project in a new tab."
 		]
 	},
+	{
+		"name": "Redirect",
+		"command": "redirect",
+		"url": "https://github.com/indyboterhoek/redirect",
+		"description": [
+			"		Would you like to redirect your websites?",
+			"		Do you not want to waste any money on hosting?",
+			"		Then this is the website for you! Just update the urls array and bam. Ready to go redirect website.",
+			"		Then you can just use CloudFlare to host the page and link your domains and it will work."
+		]
+	},
 ]
 
 let contactDetails = [
